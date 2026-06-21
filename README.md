@@ -1,26 +1,30 @@
-# Enterprise App Bootstrap & Mistral-Inspired Style Reference
+# Enterprise App Bootstrap & Style Reference
 
-Socle réutilisable pour applications d’entreprise, accompagné d’un kit visuel non officiel inspiré des patterns publics de la documentation Mistral.
+Socle réutilisable pour applications d’entreprise, accompagné d’un kit visuel non officiel.
 
-## Contenu
+## Statut de publication
 
-### Application d’entreprise
+Publication initiale réalisée via le connecteur GitHub MCP.
 
-- [Télécharger le bootstrap complet](artifacts/enterprise-app-bootstrap.zip)
-- [Guide d’architecture et de philosophie](docs/enterprise-app-bootstrap.md)
-- [Sources extraites](packages/enterprise-app-bootstrap/)
+Le connecteur MCP disponible permet l’écriture de fichiers texte dans le dépôt. Les fichiers binaires locaux volumineux du pack original ne sont pas encore présents dans le dépôt distant, car l’action MCP exposée ne fournit pas de paramètre d’upload de fichier binaire local.
 
-Le bootstrap couvre notamment : shell applicatif responsive, tableaux de bord, tables métier, workflows d’approbation, RBAC, multi-organisation, paramètres de sécurité, audit, feature flags, contrats d’intégration, observabilité, jobs, tests et déploiement.
+## Contenu déjà publié
 
-### Référence visuelle
+- Guide d’architecture et de philosophie : `docs/enterprise-app-bootstrap.md`
+- Guide détaillé du style : `docs/mistral-style-reference.md`
+- Showcase clair/sombre autonome : `preview/mistral-style-showcase.html`
+- Manifest : `REPOSITORY_MANIFEST.json`
+- Notes de publication : `PUBLISHING.md`
+- Checksums de référence : `checksums/SHA256SUMS.txt`
 
-- [Télécharger le kit CSS, tokens, icônes et exemples](artifacts/mistral-style-reference-kit.zip)
-- [Guide détaillé du style](docs/mistral-style-reference.md)
-- [Aperçu PNG](preview/mistral-style-preview.png)
-- [Showcase clair/sombre](preview/mistral-style-showcase.html)
-- [Sources extraites](packages/mistral-style-reference-kit/)
+## Contenu du pack original à ajouter par push Git classique
 
-## Démarrage du bootstrap
+- archives de livraison
+- aperçu image
+- sources extraites du bootstrap entreprise
+- sources extraites du kit de style
+
+## Démarrage attendu après publication complète
 
 ```bash
 cd packages/enterprise-app-bootstrap
@@ -29,22 +33,6 @@ npm install
 npm run dev
 ```
 
-## Vérification d’intégrité
-
-```bash
-sha256sum -c checksums/SHA256SUMS.txt
-```
-
 ## Avertissement de marque
 
-Le kit de style est une référence non officielle. Il ne contient pas de logo, wordmark, fichier de police ou illustration officielle de Mistral. Les noms et marques de tiers restent la propriété de leurs détenteurs. Consulte les notices incluses dans `packages/mistral-style-reference-kit/source/` et `packages/mistral-style-reference-kit/LICENSES/`.
-
-## Organisation
-
-```text
-artifacts/   ZIP téléchargeables
-checksums/   empreintes SHA-256
-docs/        guides Markdown
-packages/    sources extraites et modifiables
-preview/     aperçu PNG et showcase HTML
-```
+Le kit de style est une référence non officielle. Il ne contient pas de logo, wordmark, fichier de police ou illustration officielle de tiers. Les noms et marques de tiers restent la propriété de leurs détenteurs.
