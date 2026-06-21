@@ -1,0 +1,484 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "meta": {
+    "name": "Mistral Docs public-style reference",
+    "version": "2026-06-21",
+    "status": "unofficial-reference",
+    "source": [
+      "https://docs.mistral.ai/",
+      "https://github.com/mistralai/platform-docs-public",
+      "https://mistral.ai/brand/"
+    ],
+    "note": "Extracted from publicly visible documentation code and pages. No Mistral logo, wordmark, font file, model illustration, or proprietary brand asset is included."
+  },
+  "color": {
+    "brand": {
+      "red": {
+        "$type": "color",
+        "$value": "#E10500"
+      },
+      "orange": {
+        "$type": "color",
+        "$value": "#FA500F"
+      },
+      "brightOrange": {
+        "$type": "color",
+        "$value": "#FF8205"
+      },
+      "yellow": {
+        "$type": "color",
+        "$value": "#FFAF00"
+      },
+      "brightYellow": {
+        "$type": "color",
+        "$value": "#FFD700"
+      },
+      "ramp": {
+        "100": {
+          "$type": "color",
+          "$value": "#FFD700"
+        },
+        "200": {
+          "$type": "color",
+          "$value": "#FFC300"
+        },
+        "300": {
+          "$type": "color",
+          "$value": "#FFAF00"
+        },
+        "400": {
+          "$type": "color",
+          "$value": "#FF9900"
+        },
+        "500": {
+          "$type": "color",
+          "$value": "#FF8205"
+        },
+        "600": {
+          "$type": "color",
+          "$value": "#FF6600"
+        },
+        "700": {
+          "$type": "color",
+          "$value": "#FA500F"
+        },
+        "800": {
+          "$type": "color",
+          "$value": "#F13C00"
+        },
+        "900": {
+          "$type": "color",
+          "$value": "#E92700"
+        }
+      }
+    },
+    "product": {
+      "vibe": {
+        "$type": "color",
+        "$value": "#FA500F"
+      },
+      "studio": {
+        "$type": "color",
+        "$value": "#0082E6"
+      },
+      "admin": {
+        "$type": "color",
+        "$value": "#4A4A5E"
+      },
+      "models": {
+        "$type": "color",
+        "$value": "#6F6F84"
+      }
+    },
+    "semantic": {
+      "light": {
+        "background": {
+          "$type": "color",
+          "$value": "oklch(1 0 0)",
+          "hex": "#FFFFFF"
+        },
+        "foreground": {
+          "$type": "color",
+          "$value": "oklch(0.2161 0.0061 56.04)",
+          "hex": "#1C1917"
+        },
+        "card": {
+          "$type": "color",
+          "$value": "oklch(1 0 0)",
+          "hex": "#FFFFFF"
+        },
+        "primary": {
+          "$type": "color",
+          "$value": "oklch(0.6639 0.2147 37.25)",
+          "hex": "#FA5111"
+        },
+        "primaryForeground": {
+          "$type": "color",
+          "$value": "oklch(0.9967 0.0054 95.1)",
+          "hex": "#FFFEFA"
+        },
+        "primarySoft": {
+          "$type": "color",
+          "$value": "oklch(0.735 0.1841 53.6)",
+          "hex": "#FF8205"
+        },
+        "secondary": {
+          "$type": "color",
+          "$value": "oklch(0.9368 0.0013 106.43)",
+          "hex": "#EAEAE9"
+        },
+        "tertiary": {
+          "$type": "color",
+          "$value": "oklch(0.9101 0.101 92.32)",
+          "hex": "#F9E092"
+        },
+        "muted": {
+          "$type": "color",
+          "$value": "oklch(0.9729 0.0013 106.42)",
+          "hex": "#F6F6F5"
+        },
+        "mutedForeground": {
+          "$type": "color",
+          "$value": "oklch(0.556 0 0)",
+          "hex": "#737373"
+        },
+        "accent": {
+          "$type": "color",
+          "$value": "oklch(0.97 0 0)",
+          "hex": "#F5F5F5"
+        },
+        "destructive": {
+          "$type": "color",
+          "$value": "oklch(0.577 0.245 27.325)",
+          "hex": "#E7000B"
+        },
+        "border": {
+          "$type": "color",
+          "$value": "oklch(0.2739 0.0055 286.03 / 20%)"
+        },
+        "input": {
+          "$type": "color",
+          "$value": "oklch(0.922 0 0)",
+          "hex": "#E5E5E5"
+        },
+        "codeBackground": {
+          "$type": "color",
+          "$value": "oklch(0.9729 0.0013 106.42)",
+          "hex": "#F6F6F5"
+        },
+        "codeForeground": {
+          "$type": "color",
+          "$value": "oklch(0.2161 0.0061 56.04)",
+          "hex": "#1C1917"
+        }
+      },
+      "dark": {
+        "background": {
+          "$type": "color",
+          "$value": "oklch(0.173 0 0)",
+          "hex": "#101010"
+        },
+        "foreground": {
+          "$type": "color",
+          "$value": "oklch(0.985 0 0)",
+          "hex": "#FAFAFA"
+        },
+        "card": {
+          "$type": "color",
+          "$value": "oklch(0.205 0 0)",
+          "hex": "#171717"
+        },
+        "primary": {
+          "$type": "color",
+          "$value": "oklch(0.6639 0.2147 37.25)",
+          "hex": "#FA5111"
+        },
+        "primarySoft": {
+          "$type": "color",
+          "$value": "oklch(0.6158 0.1589 48.63)",
+          "hex": "#CE6114"
+        },
+        "secondary": {
+          "$type": "color",
+          "$value": "oklch(74.443% 0.00008 271.152 / 0.124)"
+        },
+        "muted": {
+          "$type": "color",
+          "$value": "oklch(0.223 0.0038 286.08)",
+          "hex": "#1B1B1D"
+        },
+        "mutedForeground": {
+          "$type": "color",
+          "$value": "oklch(1 0 0)",
+          "hex": "#FFFFFF"
+        },
+        "accent": {
+          "$type": "color",
+          "$value": "oklch(1 0 0 / 7.5%)"
+        },
+        "destructive": {
+          "$type": "color",
+          "$value": "oklch(0.704 0.191 22.216)"
+        },
+        "border": {
+          "$type": "color",
+          "$value": "oklch(1 0 0 / 20%)"
+        },
+        "input": {
+          "$type": "color",
+          "$value": "oklch(1 0 0 / 15%)"
+        },
+        "codeBackground": {
+          "$type": "color",
+          "$value": "oklch(0.2161 0.0061 56.04)",
+          "hex": "#1C1917"
+        },
+        "codeForeground": {
+          "$type": "color",
+          "$value": "oklch(0.985 0 0)",
+          "hex": "#FAFAFA"
+        }
+      }
+    },
+    "model": {
+      "pink": {
+        "$type": "color",
+        "$value": "oklch(0.8746 0.0954 336.78)",
+        "hex": "#FFBEED"
+      },
+      "red": {
+        "$type": "color",
+        "$value": "oklch(0.6639 0.2147 37.25)",
+        "hex": "#FA5111"
+      },
+      "orange": {
+        "$type": "color",
+        "$value": "oklch(0.735 0.1841 53.6)",
+        "hex": "#FF8205"
+      },
+      "yellow": {
+        "$type": "color",
+        "$value": "oklch(0.9101 0.101 92.32)",
+        "hex": "#F9E092"
+      },
+      "green": {
+        "$type": "color",
+        "$value": "oklch(0.7639 0.1263 146.86)",
+        "hex": "#79C882"
+      },
+      "blue": {
+        "$type": "color",
+        "$value": "oklch(0.8859 0.0471 215.03)",
+        "hex": "#B7E2ED"
+      },
+      "purple": {
+        "$type": "color",
+        "$value": "oklch(0.7435 0.15965 301.9512)",
+        "hex": "#BF91FF"
+      },
+      "beige": {
+        "$type": "color",
+        "$value": "oklch(0.9403 0.0356 91.12)",
+        "hex": "#F4EBD1"
+      }
+    }
+  },
+  "typography": {
+    "fontFamily": {
+      "sans": {
+        "$type": "fontFamily",
+        "$value": [
+          "Arial",
+          "ui-sans-serif",
+          "system-ui",
+          "sans-serif"
+        ]
+      },
+      "mono": {
+        "$type": "fontFamily",
+        "$value": [
+          "SF Mono",
+          "ui-monospace",
+          "Menlo",
+          "Monaco",
+          "Consolas",
+          "monospace"
+        ]
+      }
+    },
+    "weight": {
+      "regular": {
+        "$type": "fontWeight",
+        "$value": 400
+      },
+      "medium": {
+        "$type": "fontWeight",
+        "$value": 500
+      },
+      "semibold": {
+        "$type": "fontWeight",
+        "$value": 600
+      },
+      "bold": {
+        "$type": "fontWeight",
+        "$value": 700
+      },
+      "black": {
+        "$type": "fontWeight",
+        "$value": 900
+      }
+    },
+    "scale": {
+      "xs": {
+        "fontSize": "0.75rem",
+        "lineHeight": 1.4,
+        "letterSpacing": "-0.01em"
+      },
+      "sm": {
+        "fontSize": "0.875rem",
+        "lineHeight": 1.4,
+        "letterSpacing": "-0.015em"
+      },
+      "base": {
+        "fontSize": "1rem",
+        "lineHeight": 1.5,
+        "letterSpacing": "-0.02em"
+      },
+      "lg": {
+        "fontSize": "1.125rem",
+        "lineHeight": 1.4,
+        "letterSpacing": "-0.02em"
+      },
+      "xl": {
+        "fontSize": "1.25rem",
+        "lineHeight": 1.2,
+        "letterSpacing": "-0.02em"
+      },
+      "2xl": {
+        "fontSize": "1.5rem",
+        "lineHeight": 1.2,
+        "letterSpacing": "-0.02em"
+      },
+      "3xl": {
+        "fontSize": "1.875rem",
+        "lineHeight": 1.2,
+        "letterSpacing": "-0.02em"
+      },
+      "4xl": {
+        "fontSize": "2.25rem",
+        "lineHeight": 1.1,
+        "letterSpacing": "-0.02em"
+      },
+      "5xl": {
+        "fontSize": "3rem",
+        "lineHeight": 1.1,
+        "letterSpacing": "-0.02em"
+      },
+      "6xl": {
+        "fontSize": "3.5rem",
+        "lineHeight": 1.1,
+        "letterSpacing": "-0.04em"
+      }
+    }
+  },
+  "dimension": {
+    "radius": {
+      "base": {
+        "$type": "dimension",
+        "$value": "0.625rem"
+      },
+      "sm": {
+        "$type": "dimension",
+        "$value": "0.375rem"
+      },
+      "md": {
+        "$type": "dimension",
+        "$value": "0.5rem"
+      },
+      "lg": {
+        "$type": "dimension",
+        "$value": "0.625rem"
+      },
+      "xl": {
+        "$type": "dimension",
+        "$value": "0.875rem"
+      }
+    },
+    "layout": {
+      "headerDesktop": {
+        "$type": "dimension",
+        "$value": "4.5rem"
+      },
+      "headerMobile": {
+        "$type": "dimension",
+        "$value": "3.375rem"
+      },
+      "sidebar": {
+        "$type": "dimension",
+        "$value": "16rem"
+      },
+      "contentInset": {
+        "$type": "dimension",
+        "$value": "4rem"
+      },
+      "outerInset": {
+        "$type": "dimension",
+        "$value": "1rem"
+      },
+      "maxCanvas": {
+        "$type": "dimension",
+        "$value": "120rem"
+      }
+    },
+    "icon": {
+      "canvas": {
+        "$type": "dimension",
+        "$value": "24px"
+      },
+      "module": {
+        "$type": "dimension",
+        "$value": "3px"
+      },
+      "default": {
+        "$type": "dimension",
+        "$value": "16px"
+      }
+    }
+  },
+  "motion": {
+    "duration": {
+      "fast": {
+        "$type": "duration",
+        "$value": "150ms"
+      },
+      "base": {
+        "$type": "duration",
+        "$value": "300ms"
+      },
+      "expressive": {
+        "$type": "duration",
+        "$value": "750ms"
+      }
+    },
+    "easing": {
+      "standard": {
+        "$type": "cubicBezier",
+        "$value": [
+          0.2,
+          0,
+          0,
+          1
+        ]
+      },
+      "expressive": {
+        "$type": "cubicBezier",
+        "$value": [
+          0.16,
+          1,
+          0.3,
+          1
+        ]
+      }
+    }
+  }
+}

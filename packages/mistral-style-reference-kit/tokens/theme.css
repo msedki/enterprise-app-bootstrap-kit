@@ -1,0 +1,161 @@
+/*
+  Unofficial Mistral Docs style reference.
+  Source references:
+  - https://github.com/mistralai/platform-docs-public/blob/main/src/app/globals.css
+  - https://github.com/mistralai/platform-docs-public/blob/main/tailwind.config.js
+
+  The source repository is Apache-2.0. Mistral names, logos and identifying
+  brand assets remain trademarks/property of Mistral. No official asset is
+  bundled here.
+*/
+
+.theme-mistral-reference,
+:root {
+  color-scheme: light;
+
+  --msr-font-sans: Arial, ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  --msr-font-mono: "SF Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+
+  --msr-radius: 0.625rem;
+  --msr-radius-sm: calc(var(--msr-radius) - 0.25rem);
+  --msr-radius-md: calc(var(--msr-radius) - 0.125rem);
+  --msr-radius-lg: var(--msr-radius);
+  --msr-radius-xl: calc(var(--msr-radius) + 0.25rem);
+
+  --msr-background: oklch(1 0 0);
+  --msr-foreground: oklch(0.2161 0.0061 56.04);
+  --msr-card: oklch(1 0 0);
+  --msr-card-foreground: oklch(0.145 0 0);
+  --msr-popover: oklch(1 0 0);
+  --msr-popover-foreground: oklch(0.145 0 0);
+  --msr-primary: oklch(0.6639 0.2147 37.25);
+  --msr-primary-foreground: oklch(0.9967 0.0054 95.1);
+  --msr-primary-soft: oklch(0.735 0.1841 53.6);
+  --msr-primary-soft-foreground: oklch(0.2161 0.0061 56.04);
+  --msr-secondary: oklch(0.9368 0.0013 106.43);
+  --msr-secondary-foreground: oklch(0.205 0 0);
+  --msr-tertiary: oklch(0.9101 0.101 92.32);
+  --msr-tertiary-foreground: oklch(0.205 0 0);
+  --msr-muted: oklch(0.9729 0.0013 106.42);
+  --msr-muted-foreground: oklch(0.556 0 0);
+  --msr-accent: oklch(0.97 0 0);
+  --msr-accent-foreground: oklch(0.205 0 0);
+  --msr-destructive: oklch(0.577 0.245 27.325);
+  --msr-border: oklch(0.2739 0.0055 286.03 / 20%);
+  --msr-input: oklch(0.922 0 0);
+  --msr-ring: oklch(0.708 0 0);
+  --msr-code-background: oklch(0.9729 0.0013 106.42);
+  --msr-code-foreground: oklch(0.2161 0.0061 56.04);
+
+  --msr-brand-red: #e10500;
+  --msr-brand-orange: #fa500f;
+  --msr-brand-bright-orange: #ff8205;
+  --msr-brand-yellow: #ffaf00;
+  --msr-brand-bright-yellow: #ffd700;
+
+  --msr-product-vibe: #fa500f;
+  --msr-product-studio: #0082e6;
+  --msr-product-admin: #4a4a5e;
+  --msr-product-models: #6f6f84;
+
+  --msr-model-pink: oklch(0.8746 0.0954 336.78);
+  --msr-model-red: oklch(0.6639 0.2147 37.25);
+  --msr-model-orange: oklch(0.735 0.1841 53.6);
+  --msr-model-yellow: oklch(0.9101 0.101 92.32);
+  --msr-model-green: oklch(0.7639 0.1263 146.86);
+  --msr-model-blue: oklch(0.8859 0.0471 215.03);
+  --msr-model-purple: oklch(0.7435 0.15965 301.9512);
+  --msr-model-beige: oklch(0.9403 0.0356 91.12);
+
+  --msr-space-sides: 1rem;
+  --msr-space-inner: 4rem;
+  --msr-header-height: 4.5rem;
+  --msr-sidebar-width: 16rem;
+  --msr-breadcrumb-height: 4rem;
+  --msr-max-canvas: 120rem;
+
+  --msr-shadow-inner-ring: inset 0 0 0 1px var(--msr-border);
+  --msr-shadow-card: 0 12px 30px oklch(0.2161 0.0061 56.04 / 8%);
+  --msr-shadow-key: inset -1px -1px 1px rgba(0,0,0,.25), 0 0 0 .5px rgba(0,0,0,.5);
+
+  --msr-ease-standard: cubic-bezier(0.2, 0, 0, 1);
+  --msr-ease-expressive: cubic-bezier(0.16, 1, 0.3, 1);
+  --msr-duration-fast: 150ms;
+  --msr-duration-base: 300ms;
+  --msr-duration-expressive: 750ms;
+
+  /* Generic aliases. Remove this block when integrating into an existing token system. */
+  --background: var(--msr-background);
+  --foreground: var(--msr-foreground);
+  --card: var(--msr-card);
+  --card-foreground: var(--msr-card-foreground);
+  --primary: var(--msr-primary);
+  --primary-foreground: var(--msr-primary-foreground);
+  --primary-soft: var(--msr-primary-soft);
+  --secondary: var(--msr-secondary);
+  --secondary-foreground: var(--msr-secondary-foreground);
+  --muted: var(--msr-muted);
+  --muted-foreground: var(--msr-muted-foreground);
+  --accent: var(--msr-accent);
+  --accent-foreground: var(--msr-accent-foreground);
+  --destructive: var(--msr-destructive);
+  --border: var(--msr-border);
+  --input: var(--msr-input);
+  --ring: var(--msr-ring);
+}
+
+.theme-mistral-reference.dark,
+.dark .theme-mistral-reference,
+html.dark {
+  color-scheme: dark;
+
+  --msr-background: oklch(0.173 0 0);
+  --msr-foreground: oklch(0.985 0 0);
+  --msr-card: oklch(0.205 0 0);
+  --msr-card-foreground: oklch(0.985 0 0);
+  --msr-popover: oklch(0.205 0 0);
+  --msr-popover-foreground: oklch(0.985 0 0);
+  --msr-primary: oklch(0.6639 0.2147 37.25);
+  --msr-primary-foreground: oklch(0.9967 0.0054 95.1);
+  --msr-primary-soft: oklch(0.6158 0.1589 48.63);
+  --msr-secondary: oklch(74.443% 0.00008 271.152 / 0.124);
+  --msr-secondary-foreground: oklch(99.557% 0.0021 14.222);
+  --msr-muted: oklch(0.223 0.0038 286.08);
+  --msr-muted-foreground: oklch(1 0 0);
+  --msr-accent: oklch(1 0 0 / 7.5%);
+  --msr-accent-foreground: oklch(0.985 0 0);
+  --msr-destructive: oklch(0.704 0.191 22.216);
+  --msr-border: oklch(1 0 0 / 20%);
+  --msr-input: oklch(1 0 0 / 15%);
+  --msr-ring: oklch(0.556 0 0);
+  --msr-code-background: oklch(0.2161 0.0061 56.04);
+  --msr-code-foreground: oklch(0.985 0 0);
+
+  --msr-model-red: oklch(0.5544 0.1897 36.04);
+  --msr-model-orange: oklch(0.6158 0.1589 48.63);
+  --msr-model-yellow: oklch(0.7397 0.1464 88.05);
+  --msr-model-pink: oklch(0.5664 0.1295 338.46);
+  --msr-model-green: oklch(0.5264 0.0946 112.22);
+  --msr-model-blue: oklch(0.6067 0.0639 216.52);
+  --msr-model-purple: oklch(0.7435 0.15965 301.9512);
+  --msr-model-beige: oklch(0.5832 0.0377 92.41);
+
+  --msr-shadow-card: 0 14px 36px rgba(0,0,0,.28);
+  --msr-shadow-key: inset -1px -1px 1px rgba(255,255,255,.3), 0 0 0 .5px rgba(255,255,255,.4);
+}
+
+@media (max-width: 768px) {
+  .theme-mistral-reference,
+  :root {
+    --msr-header-height: 3.375rem;
+    --msr-space-sides: 2rem;
+    --msr-space-inner: var(--msr-space-sides);
+  }
+}
+
+@media (max-width: 640px) {
+  .theme-mistral-reference,
+  :root {
+    --msr-space-sides: 1rem;
+  }
+}

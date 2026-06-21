@@ -1,0 +1,3 @@
+import { SearchX } from "lucide-react";
+import { Button } from "@/components/ui/button";
+export default function NotFound() { return <main id="main-content" className="grid min-h-dvh place-items-center p-6"><div className="text-center"><SearchX className="mx-auto size-10 text-muted-foreground" /><p className="mt-4 font-mono text-sm text-primary">404</p><h1 className="mt-2 text-2xl font-bold">Page introuvable</h1><p className="mt-2 text-sm text-muted-foreground">La ressource n’existe pas ou vous n’y avez pas accès.</p><Button asChild className="mt-6"><a href="/dashboard">Retour à l’accueil</a></Button></div></main>; }
