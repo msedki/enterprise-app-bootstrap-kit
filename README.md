@@ -60,8 +60,13 @@ enterprise-app-bootstrap-kit/
 
 L'application est un monolithe modulaire. Une requête traverse toujours les mêmes couches :
 
-```text
-Route / UI → Composant de feature → Service applicatif → Policy + validation → Repository → Infrastructure
+```mermaid
+flowchart LR
+  A[Route / UI] --> B[Composant de feature]
+  B --> C[Service applicatif]
+  C --> D[Policy + validation]
+  D --> E[Repository]
+  E --> F[Infrastructure]
 ```
 
 ```text

@@ -6,18 +6,13 @@ Le starter sépare les responsabilités sans imposer des microservices. Une appl
 
 ## Couches
 
-```text
-Route / UI
-   ↓
-Feature component
-   ↓
-Application service
-   ↓
-Policy + validation
-   ↓
-Repository / integration adapter
-   ↓
-Database, API externe, queue, object storage
+```mermaid
+flowchart TD
+  A[Route / UI] --> B[Feature component]
+  B --> C[Application service]
+  C --> D[Policy + validation]
+  D --> E[Repository / integration adapter]
+  E --> F[Database, API externe, queue, object storage]
 ```
 
 ### `src/app`
@@ -44,22 +39,32 @@ Adapters transverses pour audit, jobs, événements, feature flags, notification
 
 ## Dépendances autorisées
 
-```text
-app → features, components, server services
-features → components, lib, types
-server services → policies, schemas, repositories, adapters
-repositories → infrastructure client, domain types
-components/ui → lib seulement
+```mermaid
+flowchart LR
+  app --> features
+  app --> components
+  app --> services[server services]
+  features --> components
+  features --> lib
+  features --> types
+  services --> policies
+  services --> schemas
+  services --> repositories
+  services --> adapters
+  repositories --> infra[infrastructure client]
+  repositories --> types
+  ui[components/ui] --> lib
 ```
 
-Éviter :
+À éviter :
 
-```text
-repository → React
-component UI → database
-page → SQL direct
-feature A → fichier interne de feature B
-client component → secret ou SDK serveur
+```mermaid
+flowchart LR
+  repository -. interdit .-> React
+  ui[component UI] -. interdit .-> database
+  page -. interdit .-> SQL[SQL direct]
+  featureA[feature A] -. interdit .-> featureB[fichier interne de feature B]
+  client[client component] -. interdit .-> secret[secret ou SDK serveur]
 ```
 
 ## Multi-tenant

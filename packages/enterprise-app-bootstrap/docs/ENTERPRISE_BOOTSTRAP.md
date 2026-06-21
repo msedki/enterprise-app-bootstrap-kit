@@ -323,15 +323,15 @@ Encapsule la persistance et applique systématiquement le scope d’organisation
 
 ### Exemple de flux
 
-```text
-POST /api/records
-  → getSession
-  → requirePermission(records.write)
-  → createRecordSchema.parse
-  → recordsRepository.create
-  → audit.write
-  → events.publish
-  → JSON 201
+```mermaid
+flowchart TD
+  R[POST /api/records] --> S[getSession]
+  S --> P["requirePermission(records.write)"]
+  P --> V[createRecordSchema.parse]
+  V --> C[recordsRepository.create]
+  C --> A[audit.write]
+  A --> E[events.publish]
+  E --> J[JSON 201]
 ```
 
 ## 10. Données et multi-tenancy

@@ -288,18 +288,16 @@ Canvas max      1920 px
 
 Structure entreprise recommandée :
 
-```txt
-Header global
-├── switcher produit ou organisation
-├── navigation principale
-├── recherche
-├── commandes globales
-└── profil
-
-Body
-├── sidebar métier
-├── contenu principal
-└── panneau contextuel optionnel
+```mermaid
+flowchart TD
+  Header[Header global] --> SW[switcher produit ou organisation]
+  Header --> Nav[navigation principale]
+  Header --> Search[recherche]
+  Header --> Cmd[commandes globales]
+  Header --> Profil[profil]
+  Body --> Side[sidebar métier]
+  Body --> Main[contenu principal]
+  Body --> Aside[panneau contextuel optionnel]
 ```
 
 Le style Mistral peut donc s’appliquer à une application métier complète, pas uniquement à une documentation.
@@ -559,14 +557,15 @@ Conserve néanmoins la même esthétique de surface et de bordure.
 
 Le style se transpose ainsi :
 
-```txt
-Hero docs              -> en-tête de workspace
-Cartes produit         -> modules ou indicateurs
-Quickstarts            -> tâches recommandées
-Section tabs           -> groupes de KPIs
-Sidebar docs           -> navigation métier
-Command palette        -> navigation et actions globales
-TOC                    -> panneau contextuel ou filtres
+```mermaid
+flowchart LR
+  H[Hero docs] --> H2[en-tête de workspace]
+  P[Cartes produit] --> P2[modules ou indicateurs]
+  Q[Quickstarts] --> Q2[tâches recommandées]
+  S[Section tabs] --> S2[groupes de KPIs]
+  N[Sidebar docs] --> N2[navigation métier]
+  C[Command palette] --> C2[navigation et actions globales]
+  T[TOC] --> T2[panneau contextuel ou filtres]
 ```
 
 ### 12.2 CRM
