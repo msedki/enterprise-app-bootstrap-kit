@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mistral-inspired Enterprise Style Showcase</title>
+  <style>
+    :root {
+      --bg: #f6f5f2;
+      --panel: #ffffff;
+      --text: #27231f;
+      --muted: #706b64;
+      --border: rgba(39,35,31,.18);
+      --primary: #fa500f;
+      --primary-dark: #e10500;
+      --yellow: #ffaf00;
+      --blue: #0082e6;
+      --neutral: #4a4a5e;
+      --radius: 14px;
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      --sans: Arial, ui-sans-serif, system-ui, sans-serif;
+    }
+    [data-theme="dark"] {
+      --bg: #161616;
+      --panel: #202020;
+      --text: #fafafa;
+      --muted: #c8c3ba;
+      --border: rgba(255,255,255,.18);
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: var(--sans); background: var(--bg); color: var(--text); }
+    header { position: sticky; top: 0; backdrop-filter: blur(12px); background: color-mix(in srgb, var(--bg), transparent 12%); border-bottom: 1px solid var(--border); z-index: 10; }
+    .bar { max-width: 1180px; margin: auto; height: 72px; display: flex; align-items: center; gap: 18px; padding: 0 24px; }
+    .brand { display: flex; gap: 10px; align-items: center; font-weight: 800; }
+    .mark { width: 32px; height: 32px; border-radius: 8px; background: linear-gradient(135deg, var(--primary-dark), var(--yellow)); box-shadow: inset 0 0 0 2px rgba(255,255,255,.25); }
+    nav { display: flex; gap: 10px; margin-left: 28px; }
+    nav a { color: var(--muted); text-decoration: none; font-size: 14px; font-weight: 700; }
+    nav a.active { color: var(--text); }
+    .search { margin-left: auto; font-family: var(--mono); background: color-mix(in srgb, var(--panel), var(--text) 4%); border: 1px solid var(--border); border-radius: 8px; padding: 8px 10px; color: var(--muted); font-size: 12px; min-width: 220px; display: flex; justify-content: space-between; }
+    button { border: 1px solid var(--border); background: var(--panel); color: var(--text); padding: 9px 12px; border-radius: 8px; font-weight: 800; cursor: pointer; }
+    .primary { background: var(--primary); color: #fff7ee; border-color: var(--primary); }
+    main { max-width: 1180px; margin: auto; padding: 48px 24px 80px; }
+    .hero { display: grid; grid-template-columns: 1.2fr .8fr; gap: 40px; align-items: center; }
+    h1 { font-size: clamp(36px, 5vw, 64px); line-height: 1.04; letter-spacing: -.04em; margin: 0 0 18px; }
+    .lead { color: var(--muted); font-size: 20px; line-height: 1.5; max-width: 680px; }
+    .cards { position: relative; min-height: 270px; }
+    .fan { position: absolute; inset: 42px auto auto 50%; width: 128px; height: 178px; border-radius: 22px; border: 3px solid rgba(255,255,255,.65); display: grid; place-items: center; color: white; font-weight: 900; box-shadow: 0 22px 48px rgba(0,0,0,.22); transition: transform .45s cubic-bezier(.16,1,.3,1); }
+    .fan:nth-child(1) { background: var(--primary); transform: translateX(-145px) rotate(-15deg); }
+    .fan:nth-child(2) { background: var(--blue); transform: translateX(-54px) rotate(-5deg); }
+    .fan:nth-child(3) { background: var(--yellow); color: #241b00; transform: translateX(38px) rotate(7deg); }
+    .fan:nth-child(4) { background: var(--neutral); transform: translateX(128px) rotate(16deg); }
+    .cards:hover .fan { transform: translateX(var(--x)) rotate(0deg) translateY(-8px); }
+    .fan:nth-child(1){--x:-155px}.fan:nth-child(2){--x:-62px}.fan:nth-child(3){--x:32px}.fan:nth-child(4){--x:126px}
+    .section-tab { margin: 56px 0 22px; border-bottom: 1px solid color-mix(in srgb, var(--primary), transparent 25%); }
+    .section-tab span { display: inline-flex; background: var(--primary); color: #fff7ee; padding: 6px 10px; border-radius: 8px 8px 0 0; font: 800 12px/1 var(--mono); text-transform: uppercase; letter-spacing: .02em; }
+    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .card { background: var(--panel); border: 1px solid var(--border); border-radius: var(--radius); padding: 22px; min-height: 180px; transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease; }
+    .card:hover { transform: translateY(-4px); box-shadow: 0 16px 34px rgba(0,0,0,.12); border-color: color-mix(in srgb, var(--primary), transparent 45%); }
+    .card h3 { margin: 14px 0 8px; font-size: 22px; }
+    .card p { color: var(--muted); line-height: 1.45; }
+    .pill { display: inline-flex; font: 800 11px/1 var(--mono); text-transform: uppercase; padding: 6px 9px; border-radius: 999px; border: 1px solid var(--border); color: var(--muted); }
+    pre { background: #201f1d; color: #f8f8f2; padding: 18px; border-radius: var(--radius); overflow: auto; font-family: var(--mono); }
+    .callout { border-left: 4px solid var(--primary); background: color-mix(in srgb, var(--primary), transparent 90%); padding: 16px 18px; border-radius: 10px; }
+    @media (max-width: 850px) { .hero, .grid { grid-template-columns: 1fr; } nav { display: none; } .search { min-width: 140px; } }
+  </style>
+</head>
+<body>
+  <header><div class="bar"><div class="brand"><div class="mark"></div>Enterprise Kit</div><nav><a class="active">Docs</a><a>Modules</a><a>API</a><a>Admin</a></nav><div class="search">Search <kbd>⌘K</kbd></div><button onclick="document.documentElement.dataset.theme=document.documentElement.dataset.theme==='dark'?'light':'dark'">Theme</button><button class="primary">Open app</button></div></header>
+  <main>
+    <section class="hero"><div><h1>Socle applicatif entreprise, dense, propre et réutilisable.</h1><p class="lead">Un style inspiré des patterns Mistral Docs : surfaces nettes, accents chauds, mono technique, cartes expressives, composants compacts et dark mode cohérent.</p></div><div class="cards"><div class="fan">APP</div><div class="fan">API</div><div class="fan">DOC</div><div class="fan">OPS</div></div></section>
+    <div class="section-tab"><span>Modules</span></div>
+    <section class="grid"><article class="card"><span class="pill">Core</span><h3>Application shell</h3><p>Sidebar, header, workspace switcher, command palette et navigation.</p></article><article class="card"><span class="pill">Security</span><h3>RBAC & audit</h3><p>Permissions serveur, MFA-ready, SSO-ready et journal d'audit.</p></article><article class="card"><span class="pill">Design</span><h3>Tokens CSS</h3><p>Palette, radius, spacing, typographie, composants et icônes pixel.</p></article></section>
+    <div class="section-tab"><span>Callout</span></div><div class="callout"><strong>Note.</strong> Ce showcase est autonome et sert de référence visuelle rapide.</div>
+    <div class="section-tab"><span>Code</span></div><pre><code>npm install
+npm run dev
+# build enterprise modules from the starter</code></pre>
+  </main>
+</body>
+</html>
