@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import { Building2, Check, ChevronsUpDown } from "lucide-react";
+import { toast } from "sonner";
 import { workspaces } from "@/config/workspaces";
 import { Button } from "@/components/ui/button";
 import {
@@ -28,7 +29,15 @@ export function WorkspaceSwitcher({ initialWorkspaceId }: { initialWorkspaceId: 
         <DropdownMenuLabel>Espaces de travail</DropdownMenuLabel>
         <DropdownMenuSeparator />
         {workspaces.map(workspace => (
-          <DropdownMenuItem key={workspace.id} onClick={() => setWorkspaceId(workspace.id)}>
+          <DropdownMenuItem
+            key={workspace.id}
+            onClick={() => {
+              setWorkspaceId(workspace.id);
+              toast.info(`Espace de travail actif : ${workspace.name}`, {
+                description: "À relier à une action serveur qui persiste le choix et révoque les données de l’ancien espace.",
+              });
+            }}
+          >
             <Building2 className="size-4" />
             <div className="min-w-0 flex-1">
               <p className="truncate">{workspace.name}</p>

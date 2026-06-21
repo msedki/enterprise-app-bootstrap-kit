@@ -17,7 +17,7 @@ Remplacer `src/features/auth/session.ts` par l’intégration IdP de l’entrepr
 
 ## Autorisation
 
-L’interface masque les entrées non autorisées, mais le serveur reste l’autorité. Chaque service applicatif appelle `requirePermission()` avant l’accès au repository.
+L’interface masque les entrées non autorisées, mais le serveur reste l’autorité. Chaque service applicatif appelle `requirePermission()` avant l’accès au repository, et chaque page sous `src/app/(app)` appelle `requirePageAccess()` avant de rendre son contenu : retirer un lien de `src/config/navigation.ts` ne bloque jamais l’accès direct à l’URL, seul ce contrôle le fait.
 
 Le RBAC du starter est un point de départ. Pour les systèmes complexes, ajouter :
 

@@ -26,7 +26,7 @@ export const navigation: NavigationGroup[] = [
     items: [
       { label: "Organisation", href: "/settings", icon: Settings, permission: "settings.read" },
       { label: "Membres et accès", href: "/settings/members", icon: Users, permission: "members.read" },
-      { label: "Sécurité", href: "/settings/security", icon: ShieldCheck, permission: "settings.read" },
+      { label: "Sécurité", href: "/settings/security", icon: ShieldCheck, permission: "security.manage" },
       { label: "Feature flags", href: "/settings/feature-flags", icon: Flag, permission: "feature_flags.manage", feature: "featureFlagsAdmin" },
     ],
   },

@@ -24,6 +24,8 @@ Database, API externe, queue, object storage
 
 Composition des pages, metadata, layouts, handlers HTTP et états de navigation. Les routes ne doivent pas contenir les règles métier centrales.
 
+Le layout authentifié (`src/app/(app)/layout.tsx`) vérifie seulement qu'une session existe. Chaque page applique en plus sa propre permission via `requirePageAccess()` (`src/features/auth/require-page-access.tsx`), qui rejoue la même politique que les services serveur. Masquer un lien dans `src/config/navigation.ts` ne suffit jamais à protéger une route : un utilisateur connaissant l'URL doit retomber sur ce contrôle.
+
 ### `src/features`
 
 Modules verticaux : types, schémas, composants et données de démonstration d’un domaine. Un module ne doit pas importer les détails internes d’un autre module ; il passe par un contrat public ou un service applicatif.
@@ -71,6 +73,8 @@ resourceId
 ```
 
 Le workspace actif de l’interface n’est pas une preuve d’autorisation. Le serveur doit vérifier l’appartenance de l’utilisateur, le rôle et le scope de la ressource.
+
+Le `RecordsRepository` applique ce principe : `list()` et `create()` filtrent par `workspaceId` et chaque `BusinessRecord` porte ce champ. C'est le scoping minimal à reproduire pour tout nouveau repository ; en production, ajoutez aussi `organizationId` si une organisation peut posséder plusieurs workspaces non liés entre eux.
 
 ## Extraction future
 

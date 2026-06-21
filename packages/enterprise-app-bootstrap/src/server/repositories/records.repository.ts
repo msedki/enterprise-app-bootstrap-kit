@@ -10,14 +10,13 @@ export interface RecordsRepository {
 
 class InMemoryRecordsRepository implements RecordsRepository {
   async list(workspaceId: string) {
-    void workspaceId;
-    return structuredClone(records);
+    return structuredClone(records.filter(record => record.workspaceId === workspaceId));
   }
 
   async create(workspaceId: string, input: CreateRecordInput) {
-    void workspaceId;
     return {
-      id: `rec_${Date.now()}`,
+      id: `rec_${crypto.randomUUID()}`,
+      workspaceId,
       ...input,
       updatedAt: new Date().toISOString(),
     };

@@ -2,6 +2,7 @@ export type RecordStatus = "active" | "pending" | "blocked" | "draft";
 
 export type BusinessRecord = {
   id: string;
+  workspaceId: string;
   name: string;
   reference: string;
   owner: string;

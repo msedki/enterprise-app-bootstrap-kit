@@ -12,8 +12,11 @@ export interface FeatureFlagProvider {
 }
 
 class EnvironmentFlagProvider implements FeatureFlagProvider {
-  async enabled(key: string) {
-    return process.env[`FLAG_${key.toUpperCase().replaceAll("-", "_")}`] === "true";
+  async enabled(key: string, context: FlagContext) {
+    const flagName = key.toUpperCase().replaceAll("-", "_");
+    const orgOverride = process.env[`FLAG_${flagName}_ORG_${context.organizationId.toUpperCase()}`];
+    if (orgOverride !== undefined) return orgOverride === "true";
+    return process.env[`FLAG_${flagName}`] === "true";
   }
 }
 

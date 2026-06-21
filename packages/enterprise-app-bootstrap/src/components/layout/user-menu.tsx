@@ -24,7 +24,7 @@ export function UserMenu({ session }: { session: AppSession }) {
         <DropdownMenuItem asChild><Link href="/settings"><Settings className="size-4" />Paramètres</Link></DropdownMenuItem>
         <DropdownMenuItem><User className="size-4" />Profil</DropdownMenuItem>
         <DropdownMenuSeparator />
-        <DropdownMenuItem className="text-destructive"><LogOut className="size-4" />Déconnexion</DropdownMenuItem>
+        <DropdownMenuItem asChild className="text-destructive"><Link href="/login"><LogOut className="size-4" />Déconnexion</Link></DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
   );

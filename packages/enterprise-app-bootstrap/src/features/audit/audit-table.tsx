@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from "react";
 import { Download, Search, UserRound, Workflow } from "lucide-react";
+import { toast } from "sonner";
 import { auditEvents } from "./data";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -12,6 +13,7 @@ import { formatDate } from "@/lib/format";
 
 const resultVariant = { success: "success", denied: "warning", failure: "danger" } as const;
 const resultLabel = { success: "Succès", denied: "Refusé", failure: "Échec" } as const;
+const maxExportRows = 5000;
 
 export function AuditTable() {
   const [query, setQuery] = useState("");
@@ -22,6 +24,10 @@ export function AuditTable() {
   }), [query, result]);
 
   function exportCsv() {
+    if (visible.length > maxExportRows) {
+      toast.error(`Export limité à ${maxExportRows} lignes`, { description: "Affinez les filtres ou utilisez l’export programmé pour de gros volumes." });
+      return;
+    }
     const header = "date,actor,action,resource,result,correlationId";
     const rows = visible.map(event => [event.occurredAt, event.actor, event.action, `${event.resource}:${event.resourceId}`, event.result, event.correlationId].map(value => `"${value}"`).join(","));
     const blob = new Blob([[header, ...rows].join("\n")], { type: "text/csv;charset=utf-8" });

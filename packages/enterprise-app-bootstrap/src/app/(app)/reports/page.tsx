@@ -4,12 +4,15 @@ import { MiniBarChart } from "@/components/common/mini-bar-chart";
 import { StatCard } from "@/components/common/stat-card";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { requirePageAccess } from "@/features/auth/require-page-access";
 
 export const metadata = { title: "Rapports" };
 const values = [84, 91, 88, 96, 103, 117, 126, 122, 139, 146, 151, 164];
 const labels = ["J", "F", "M", "A", "M", "J", "J", "A", "S", "O", "N", "D"];
 
-export default function ReportsPage() {
+export default async function ReportsPage() {
+  const denied = await requirePageAccess("reports.read");
+  if (denied) return denied;
   return (
     <div className="space-y-6">
       <PageHeader eyebrow="Décision" title="Rapports" description="Indicateurs consolidés, segmentation et exports gouvernés pour les équipes métier." actions={<><Button variant="outline"><FileSpreadsheet className="size-4" />Planifier</Button><Button><Download className="size-4" />Exporter</Button></>} />
